@@ -1,0 +1,9 @@
+<% if current_authority != $customer %>
+    <h1>New Car</h1>
+<% else %>
+    <h1>New Suggestion</h1>
+<% end %>
+
+<%= render 'form', car: @car %>
+
+<%= link_to 'Back', cars_path %>

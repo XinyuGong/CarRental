@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<!-- <p>
+  <strong>Password digest:</strong>
+  <%= @customer.password_digest %>
+</p>-->
+
+<p>
+  <strong>Charge:</strong>
+  <%= @customer.charge %>
+</p>
+<% if current_authority == $customer %>
+    <%= link_to 'Edit My Profile', edit_customer_path(@customer) %>
+<% else %>
+    <%= link_to 'Edit', edit_customer_path(@customer) %>
+<% end %>

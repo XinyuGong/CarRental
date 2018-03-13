@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin.email %>
+</p>
+<% if (current_authority == $admin && current_user == @admin) || current_authority == $superadmin %>
+    <%= link_to 'Edit', edit_admin_path(@admin) %> |
+<% end %>
+<%= link_to 'Back', admins_path %>
+<br><br>
+<%= link_to 'Create New Admin', new_admin_path %>
+

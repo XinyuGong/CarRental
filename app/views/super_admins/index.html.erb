@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<h2>SuperAdmins </h2>
+<table style="margin:0 auto">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <% @super_admins.each do |super_admin| %>
+      <tr>
+        <td><%= super_admin.name %></td>
+        <td><%= super_admin.email %></td>
+        <td><%= link_to 'Show', super_admin %></td>
+        <% if current_user == @super_admin %>
+           <td><%= link_to 'Edit', edit_super_admin_path(super_admin) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+<br><br><br>
+<%= link_to 'New SuperAdmin', new_super_admin_path %>
+
+<br>
+
